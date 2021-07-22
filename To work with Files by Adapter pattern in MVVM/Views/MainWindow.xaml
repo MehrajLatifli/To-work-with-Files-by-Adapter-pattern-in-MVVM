@@ -1,0 +1,82 @@
+﻿<Window x:Class="To_work_with_Files_by_Adapter_pattern_in_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:To_work_with_Files_by_Adapter_pattern_in_MVVM"
+        mc:Ignorable="d"
+        Title="Adapter pattern in MVVM" MaxHeight="550" MaxWidth="800" MinHeight="550" MinWidth="600" Loaded="Window_Loaded" Icon="/Views/Adapter logo2.png" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+
+            <RowDefinition Height="3*"/>
+
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="Bisque">
+
+            <WrapPanel>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+
+                <TextBox x:Name="NameTBox" Grid.Row="0" Height="70" Width="750" Text="{Binding User.Name}" FontSize="45" Margin="15,40,5,15" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" MouseLeave="NameTBox_MouseLeave" MouseEnter="NameTBox_MouseEnter"></TextBox>
+                <TextBox x:Name="SurnameTBox" Grid.Row="1" Height="70" Width="750" Text="{Binding User.Surname}" FontSize="45" Margin="15,40,5,15" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" MouseLeave="SurnameTBox_MouseLeave" MouseEnter="SurnameTBox_MouseEnter"></TextBox>
+                <TextBox x:Name="EmailTBox" Grid.Row="2" Height="70" Width="750" Text="{Binding User.Email}" FontSize="45" Margin="15,40,5,15" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" MouseLeave="EmailTBox_MouseLeave" MouseEnter="EmailTBox_MouseEnter"/>
+
+            </WrapPanel>
+
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Background="DeepSkyBlue">
+
+            <WrapPanel>
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid x:Name="FileNameGrid" Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="XML_CheckBox" Grid.Column="0" Width="150" Content="Xml" FontSize="20" FontWeight="Bold" Foreground="White" Margin="25"></CheckBox>
+                        <CheckBox x:Name="JSON_CheckBox" Grid.Column="1" Width="150" Content="JSON" FontSize="20" FontWeight="Bold" Foreground="White" Margin="25"></CheckBox>
+
+
+                    </Grid >
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="SaveButton" Grid.Column="0"  Content="Save" Background="Bisque" Foreground="DeepSkyBlue" FontSize="20" FontWeight="Bold" Margin="25,0,25,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding SaveCommand}"/>
+
+                        <Button x:Name="ViewButton" Grid.Column="1"  Content="View" Background="Bisque" Foreground="DeepSkyBlue" FontSize="20" FontWeight="Bold" Margin="25,0,25,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ViewCommand}"/>
+
+
+                    </Grid>
+
+
+
+
+                </Grid>
+            </WrapPanel>
+            <Image Width="100" Source="/Views/Adapter logo.png" />
+        </DockPanel>
+    </Grid>
+</Window>
